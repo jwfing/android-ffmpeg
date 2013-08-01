@@ -34,8 +34,8 @@ $DEBUG_FLAG \
 --enable-static \
 --cross-prefix=$NDK_TOOLCHAIN_BASE/bin/$NDK_ABI-linux-androideabi- \
 --sysroot="$NDK_SYSROOT" \
---extra-cflags="-I../x264 -mfloat-abi=softfp -mfpu=neon" \
---extra-ldflags="-L../x264" \
+--extra-cflags="-I../x264 -I../freetype2/include -mfloat-abi=softfp -mfpu=neon" \
+--extra-ldflags="-L. -L../x264" \
 \
 --enable-version3 \
 --enable-gpl \
@@ -50,7 +50,8 @@ $DEBUG_FLAG \
 --enable-parsers \
 --enable-protocols \
 --enable-filters \
---enable-avresample \
+--disable-avresample \
+--disable-swscale \
 --enable-libfreetype \
 \
 --disable-indevs \
@@ -64,7 +65,7 @@ $DEBUG_FLAG \
 --disable-ffprobe \
 --disable-ffserver \
 --disable-network \
-\
+--disable-debug \
 --enable-libx264 \
 --enable-zlib
 

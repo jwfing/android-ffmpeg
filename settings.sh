@@ -6,14 +6,14 @@ if [[ "x$NDK_BASE" == "x" ]]; then
     NDK_BASE=/opt/android-ndk
     echo "No NDK_BASE set, using $NDK_BASE"
 fi
-
+NDK_BASE=/Users/junwenfeng/Software/android-ndk-r8e
 NDK_PLATFORM_VERSION=3
 NDK_ABI=arm
 NDK_COMPILER_VERSION=4.6
 NDK_SYSROOT=$NDK_BASE/platforms/android-$NDK_PLATFORM_VERSION/arch-$NDK_ABI
 NDK_UNAME=`uname -s | tr '[A-Z]' '[a-z]'`
 HOST=$NDK_ABI-linux-androideabi
-NDK_TOOLCHAIN_BASE=$NDK_BASE/toolchains/$HOST-$NDK_COMPILER_VERSION/prebuilt/$NDK_UNAME-x86
+NDK_TOOLCHAIN_BASE=$NDK_BASE/toolchains/$HOST-$NDK_COMPILER_VERSION/prebuilt/$NDK_UNAME-x86_64
 STRIP=$NDK_TOOLCHAIN_BASE/bin/$NDK_ABI-linux-androideabi-strip
 CC="$NDK_TOOLCHAIN_BASE/bin/$HOST-gcc --sysroot=$NDK_SYSROOT"
 LD=$NDK_TOOLCHAIN_BASE/bin/$HOST-ld

@@ -9,6 +9,6 @@ pushd x264
 --host=arm-linux \
 --enable-pic \
 --enable-static \
---disable-cli
+--enable-cli
 
 popd;popd
